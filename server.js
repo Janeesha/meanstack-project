@@ -29,6 +29,7 @@ router.get("/getcontact",function(request,response){
 
 router.get("/getcontact/:id",function(request,response){
 	var id=request.params.id;
+	
 	contact.getContactById(id,function(err,contactObj){
 		if(err){
 			throw err;
@@ -71,7 +72,7 @@ router.delete("/removeContact/:id",function(request,response){
 
 app.use("/",router)
 
-var port=process.env.PORT||2000;
+var port=process.env.PORT||3000;
 app.listen(port,function(){
 	console.log("server is listening at the port"+ port)
 })
